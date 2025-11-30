@@ -46,6 +46,7 @@ export const empresa = {
       nome: 'Alice Silva',
       cargo: 'Desenvolvedora Fullstack',
       salario: 8500,
+      salarioBruto: 12500,
       dataAdmissao: '2022-01-10',
       departamento: 'TI',
     },

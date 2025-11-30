@@ -164,6 +164,7 @@ while (opcaoEscolhida !== '0') {
     case '8':
       do {
         mostrarInformacoesEmpresa(empresa);
+
         console.log(' ');
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
@@ -179,7 +180,7 @@ while (opcaoEscolhida !== '0') {
           id: empresa.funcionarios.length + 1,
           nome: readline.question(`Digite o nome do funcionário: `),
           cargo: readline.question(`Digite o cargo do funcionário: `),
-          salario: parseFloat(readline.question(`Digite o salário do funcionário: R$ `)),
+          salarioBruto: parseFloat(readline.question(`Digite o salário do funcionário: R$ `)),
           dataAdmissao: readline.question(`Digite a data de admissão do funcionário (DD/MM/AAAA): `),
           departamento: readline.question(`Digite o departamento do funcionário: `),
         });
@@ -192,6 +193,15 @@ while (opcaoEscolhida !== '0') {
     case '10':
       do {
         quadroAtualDeFuncionarios(empresa.funcionarios);
+
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
+      } while (!voltarAoMenu);
+      break;
+    case '11':
+      do {
+        folhaPagamentoPorFuncionario(empresa);
+
         console.log(' ');
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
