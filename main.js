@@ -9,6 +9,7 @@ import { validarOpcoes } from './utils/validarOpcoes.js';
 import { calcularImpostoRenda } from './utils/impostoRenda.js';
 import { calcularSalarioLiquido } from './utils/salarioLiquido.js';
 import { calculadoraSalarioMinimo } from './utils/calculadoraSalario.js';
+import { mostrarInformacoesEmpresa } from './utils/mostrarInformacoesEmpresa.js';
 
 let opcaoEscolhida = '';
 let voltarAoMenu = '';
@@ -138,6 +139,30 @@ while (opcaoEscolhida !== '0') {
         });
 
         console.log('Metas anuais atualizadas com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
+    case '7':
+      do {
+        console.log('================================================');
+        console.log('🏢✏️ Edição de Áreas de Atuação da Empresa 🏢✏️');
+        console.log('================================================');
+        console.log(' ');
+
+        empresa.areasAtuacao.forEach((area, index) => {
+          const novoNome = readline.question(`Digite o novo nome para ${area.nome} (atual: ${area.nome}): `);
+          empresa.areasAtuacao[index].nome = novoNome;
+        });
+
+        console.log('Áreas de atuação atualizadas com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
+    case '8':
+      do {
+        mostrarInformacoesEmpresa(empresa);
         console.log(' ');
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
       } while (!voltarAoMenu);
