@@ -10,6 +10,7 @@ import { calcularImpostoRenda } from './utils/impostoRenda.js';
 import { calcularSalarioLiquido } from './utils/salarioLiquido.js';
 import { calculadoraSalarioMinimo } from './utils/calculadoraSalario.js';
 import { mostrarInformacoesEmpresa } from './utils/mostrarInformacoesEmpresa.js';
+import { quadroAtualDeFuncionarios } from './utils/quadroDeFuncionarios.js';
 
 let opcaoEscolhida = '';
 let voltarAoMenu = '';
@@ -184,6 +185,13 @@ while (opcaoEscolhida !== '0') {
         });
 
         console.log('Funcionário Cadastrado com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
+      } while (!voltarAoMenu);
+      break;
+    case '10':
+      do {
+        quadroAtualDeFuncionarios(empresa.funcionarios);
         console.log(' ');
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
