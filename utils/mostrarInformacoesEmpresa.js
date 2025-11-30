@@ -18,13 +18,13 @@ export function mostrarInformacoesEmpresa(empresa) {
 📅 Data de Fundação: ${empresa.dataFundacao}
 
 📍 ÁREAS DE ATUAÇÃO:
-${empresa.areasAtuacao.map((a) => `✔️ ${a}`).join('\n')}
+${empresa.areasAtuacao.map((areas) => `✔️  ${areas.nome}`).join('\n')}
 
 📊 METAS ANUAIS (POR MÊS):
 ${metasMensais}
-${console.log('-----------------------------------------------')}
-${console.log(' ')}
+${'-----------------------------------------------------'}
 Total Anual: R$ ${totalAnual.toFixed(2)}
+
 
 📍 ENDEREÇO:
 🏠 ${empresa.endereco.logradouro}
