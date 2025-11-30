@@ -125,6 +125,23 @@ while (opcaoEscolhida !== '0') {
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
       } while (!voltarAoMenu);
       break;
+    case '6':
+      do {
+        console.log('================================================');
+        console.log('🏢✏️ Edição das Metas Anuais da Empresa 🏢✏️');
+        console.log('================================================');
+        console.log(' ');
+
+        empresa.metaAnual.forEach((meta, index) => {
+          const novaMeta = readline.question(`Digite a nova meta para ${meta.mes} (atual: R$ ${meta.meta}): R$ `);
+          empresa.metaAnual[index].meta = parseFloat(novaMeta);
+        });
+
+        console.log('Metas anuais atualizadas com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
     default:
       console.log('Opção inválida. Tente novamente.');
       break;
