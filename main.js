@@ -27,7 +27,7 @@ while (opcaoEscolhida !== '0') {
       do {
         sobreSoftware();
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
       } while (!voltarAoMenu);
       break;
     case '2':
@@ -45,9 +45,64 @@ while (opcaoEscolhida !== '0') {
         calculadoraSalarioMinimo(salarioBruto, inss, irrf, salarioLiquido, fgts);
 
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
       } while (!voltarAoMenu);
       break;
+    case '3':
+      do {
+        console.log('=============================================');
+        console.log('🏢✏️ Edição dos Dados Básicos da Empresa 🏢✏️');
+        console.log('=============================================');
+        console.log(' ');
+
+        const novoNome = readline.question('Digite o novo nome da empresa: ');
+        const razaoSocial = readline.question('Digite a nova razão social da empresa: ');
+        const novoCnpj = readline.question('Digite o novo CNPJ da empresa: ');
+        const novaInscricaoEstadual = readline.question('Digite a nova Inscrição Estadual da empresa: ');
+        const dataFundacao = readline.question('Digite a nova Data de Fundação da empresa (DD/MM/AAAA): ');
+
+        empresa.nome = novoNome;
+        empresa.razaoSocial = razaoSocial;
+        empresa.cnpj = novoCnpj;
+        empresa.inscricaoEstadual = novaInscricaoEstadual;
+        empresa.dataFundacao = dataFundacao;
+
+        console.log('Dados básicos da empresa atualizados com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
+    case '4':
+      do {
+        console.log('========================================');
+        console.log('🏢✏️ Edição do Endereço da Empresa 🏢✏️');
+        console.log('========================================');
+        console.log(' ');
+
+        const novoLogradouro = readline.question('Digite o novo logradouro: ');
+        const novoNumero = readline.question('Digite o novo número: ');
+        const novoComplemento = readline.question('Digite o novo complemento: ');
+        const novoBairro = readline.question('Digite o novo bairro: ');
+        const novaCidade = readline.question('Digite a nova cidade: ');
+        const novoEstado = readline.question('Digite o novo estado: ');
+        const novoCep = readline.question('Digite o novo CEP: ');
+
+        empresa.endereco = {
+          logradouro: novoLogradouro,
+          numero: novoNumero,
+          complemento: novoComplemento,
+          bairro: novoBairro,
+          cidade: novaCidade,
+          estado: novoEstado,
+          cep: novoCep,
+        };
+
+        console.log('Endereço da empresa atualizado com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
+
     default:
       console.log('Opção inválida. Tente novamente.');
       break;
