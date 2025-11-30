@@ -1,4 +1,5 @@
 import readline from 'readline-sync';
+import { empresa } from './types/empresa.js';
 import { exibirMenu } from './utils/exibirMenu.js';
 import { boasVindas } from './utils/boasVindas.js';
 import { calcularFgts } from './utils/calcularFgts.js';
@@ -102,7 +103,28 @@ while (opcaoEscolhida !== '0') {
         voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
       } while (!voltarAoMenu);
       break;
+    case '5':
+      do {
+        console.log('================================================');
+        console.log('🏢✏️ Edição dos Dados de Contato da Empresa 🏢✏️');
+        console.log('================================================');
+        console.log(' ');
 
+        const novoEmail = readline.question('Digite o novo e-mail: ');
+        const novoTelefone = readline.question('Digite o novo telefone: ');
+        const novoCelular = readline.question('Digite o novo celular: ');
+
+        empresa.contato = {
+          email: novoEmail,
+          telefone: novoTelefone,
+          celular: novoCelular,
+        };
+
+        console.log('Dados de contato da empresa atualizados com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+      } while (!voltarAoMenu);
+      break;
     default:
       console.log('Opção inválida. Tente novamente.');
       break;
