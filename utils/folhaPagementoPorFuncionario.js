@@ -5,7 +5,7 @@ export function folhaPagamentoPorFuncionario(dadosEmpresa) {
   console.log('=======================================================');
   console.log(' ');
 
-  dadosEmpresa.forEach((funcionario) => {
+  dadosEmpresa.funcionarios.forEach((funcionario) => {
     console.log(`🆔 ID: ${funcionario.id}`);
     console.log(`🧍 Nome: ${funcionario.nome}`);
     console.log(`🧰 Cargo: ${funcionario.cargo}`);
@@ -24,8 +24,13 @@ export function folhaPagamentoPorFuncionario(dadosEmpresa) {
   console.log(' ');
 
   console.log(
-    `Total de Salários Brutos: R$ ${dadosEmpresa
+    `Total de Salários Brutos: R$ ${dadosEmpresa.funcionarios
       .reduce((acumulator, currentValue) => acumulator + currentValue.salarioBruto, 0)
+      .toFixed(2)}`,
+  );
+  console.log(
+    `Total de Descontos do INSS: R$ ${dadosEmpresa.funcionarios
+      .reduce((acumulator, currentValue) => acumulator + currentValue.inss, 0)
       .toFixed(2)}`,
   );
 }

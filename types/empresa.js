@@ -42,13 +42,16 @@ export const empresa = {
   },
   funcionarios: [
     {
-      id: 1,
-      nome: 'Alice Silva',
-      cargo: 'Desenvolvedora Fullstack',
-      salario: 8500,
-      salarioBruto: 12500,
+      id: 0,
+      nome: '',
+      cargo: '',
+      salarioBruto: 0,
       dataAdmissao: '2022-01-10',
-      departamento: 'TI',
+      departamento: '',
+      inss: 0,
+      irrf: 0,
+      salarioLiquido: 0,
+      fgts: 0,
     },
   ],
 };

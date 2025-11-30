@@ -9,8 +9,9 @@ import { validarOpcoes } from './utils/validarOpcoes.js';
 import { calcularImpostoRenda } from './utils/impostoRenda.js';
 import { calcularSalarioLiquido } from './utils/salarioLiquido.js';
 import { calculadoraSalarioMinimo } from './utils/calculadoraSalario.js';
-import { mostrarInformacoesEmpresa } from './utils/mostrarInformacoesEmpresa.js';
 import { quadroAtualDeFuncionarios } from './utils/quadroDeFuncionarios.js';
+import { mostrarInformacoesEmpresa } from './utils/mostrarInformacoesEmpresa.js';
+import { folhaPagamentoPorFuncionario } from './utils/folhaPagementoPorFuncionario.js';
 
 let opcaoEscolhida = '';
 let voltarAoMenu = '';
@@ -176,13 +177,23 @@ while (opcaoEscolhida !== '0') {
         console.log('========================================');
         console.log(' ');
 
+        const nome = readline.question('Digite o nome do funcionário: ');
+        const cargo = readline.question('Digite o cargo do funcionário: ');
+        const salarioBruto = parseFloat(readline.question('Digite o salário do funcionário: R$ '));
+        const dataAdmissao = readline.question('Digite a data de admissão do funcionário (DD/MM/AAAA): ');
+        const departamento = readline.question('Digite o departamento do funcionário: ');
+
         empresa.funcionarios.push({
           id: empresa.funcionarios.length + 1,
-          nome: readline.question(`Digite o nome do funcionário: `),
-          cargo: readline.question(`Digite o cargo do funcionário: `),
-          salarioBruto: parseFloat(readline.question(`Digite o salário do funcionário: R$ `)),
-          dataAdmissao: readline.question(`Digite a data de admissão do funcionário (DD/MM/AAAA): `),
-          departamento: readline.question(`Digite o departamento do funcionário: `),
+          nome,
+          cargo,
+          salarioBruto,
+          dataAdmissao,
+          departamento,
+          inss: calcularInss(salarioBruto),
+          irrf: calcularImpostoRenda(salarioBruto),
+          salarioLiquido: calcularSalarioLiquido(salarioBruto),
+          fgts: calcularFgts(salarioBruto),
         });
 
         console.log('Funcionário Cadastrado com sucesso!');
