@@ -29,7 +29,7 @@ while (opcaoEscolhida !== '0') {
       do {
         sobreSoftware();
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '2':
@@ -47,7 +47,7 @@ while (opcaoEscolhida !== '0') {
         calculadoraSalarioMinimo(salarioBruto, inss, irrf, salarioLiquido, fgts);
 
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '3':
@@ -71,7 +71,7 @@ while (opcaoEscolhida !== '0') {
 
         console.log('Dados básicos da empresa atualizados com sucesso!');
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '4':
@@ -101,7 +101,7 @@ while (opcaoEscolhida !== '0') {
 
         console.log('Endereço da empresa atualizado com sucesso!');
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '5':
@@ -123,7 +123,7 @@ while (opcaoEscolhida !== '0') {
 
         console.log('Dados de contato da empresa atualizados com sucesso!');
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '6':
@@ -140,7 +140,7 @@ while (opcaoEscolhida !== '0') {
 
         console.log('Metas anuais atualizadas com sucesso!');
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '7':
@@ -157,14 +157,35 @@ while (opcaoEscolhida !== '0') {
 
         console.log('Áreas de atuação atualizadas com sucesso!');
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     case '8':
       do {
         mostrarInformacoesEmpresa(empresa);
         console.log(' ');
-        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal? (y/n)');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
+      } while (!voltarAoMenu);
+      break;
+    case '9':
+      do {
+        console.log('========================================');
+        console.log('🏢✏️ Cadastro de Novos Usuários 🏢✏️');
+        console.log('========================================');
+        console.log(' ');
+
+        empresa.funcionarios.push({
+          id: empresa.funcionarios.length + 1,
+          nome: readline.question(`Digite o nome do funcionário: `),
+          cargo: readline.question(`Digite o cargo do funcionário: `),
+          salario: parseFloat(readline.question(`Digite o salário do funcionário: R$ `)),
+          dataAdmissao: readline.question(`Digite a data de admissão do funcionário (DD/MM/AAAA): `),
+          departamento: readline.question(`Digite o departamento do funcionário: `),
+        });
+
+        console.log('Funcionário Cadastrado com sucesso!');
+        console.log(' ');
+        voltarAoMenu = readline.keyInYNStrict('Deseja voltar ao menu principal?');
       } while (!voltarAoMenu);
       break;
     default:
