@@ -1,4 +1,10 @@
 export function mostrarInformacoesEmpresa(empresa) {
+  let metasMensais = '';
+  empresa.metaAnual.forEach((meta) => {
+    metasMensais += `${meta.mes}: R$ ${meta.meta}\n`;
+  });
+  const totalAnual = empresa.metaAnual.reduce((total, meta) => total + meta.meta, 0);
+
   const template = `
 =============================================================
                  📘 CADASTRO DE EMPRESA 📘
@@ -15,20 +21,10 @@ export function mostrarInformacoesEmpresa(empresa) {
 ${empresa.areasAtuacao.map((a) => `✔️ ${a}`).join('\n')}
 
 📊 METAS ANUAIS (POR MÊS):
-Janeiro: R$ ${empresa.metas.janeiro}
-Fevereiro: R$ ${empresa.metas.fevereiro}
-Março: R$ ${empresa.metas.marco}
-Abril: R$ ${empresa.metas.abril}
-Maio: R$ ${empresa.metas.maio}
-Junho: R$ ${empresa.metas.junho}
-Julho: R$ ${empresa.metas.julho}
-Agosto: R$ ${empresa.metas.agosto}
-Setembro: R$ ${empresa.metas.setembro}
-Outubro: R$ ${empresa.metas.outubro}
-Novembro: R$ ${empresa.metas.novembro}
-Dezembro: R$ ${empresa.metas.dezembro}
-
-Total Anual: R$ ${empresa.totalAnual}
+${metasMensais}
+${console.log('-----------------------------------------------')}
+${console.log(' ')}
+Total Anual: R$ ${totalAnual.toFixed(2)}
 
 📍 ENDEREÇO:
 🏠 ${empresa.endereco.logradouro}
