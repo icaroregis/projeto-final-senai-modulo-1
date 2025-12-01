@@ -37,7 +37,7 @@ while (opcaoEscolhida !== '0') {
     case '2':
       do {
         console.log('========================================');
-        console.log('🧮 Calculadora de Salário Mínimo 🧮');
+        console.log('🧮 Calculadora de Salário Líquido 🧮');
         console.log('========================================');
         console.log(' ');
         const salarioBruto = parseFloat(readline.question('Digite o salário bruto: R$ '));
@@ -153,7 +153,7 @@ while (opcaoEscolhida !== '0') {
         console.log(' ');
 
         empresa.areasAtuacao.forEach((area, index) => {
-          const novoNome = readline.question(`Digite o novo nome para ${area.nome} (atual: ${area.nome}): `);
+          const novoNome = readline.question(`Digite o novo nome para ${area.nome}: `);
           empresa.areasAtuacao[index].nome = novoNome;
         });
 

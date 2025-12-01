@@ -1,5 +1,6 @@
 export const empresa = {
   nome: 'Umbrella Corporation',
+  nomeFantasia: 'Umbrella Corp',
   razaoSocial: 'Umbrella Corporation Ltda',
   cnpj: '12.345.678/0001-90',
   inscricaoEstadual: '123.456.789.123',

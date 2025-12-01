@@ -27,7 +27,7 @@ Total Anual: R$ ${totalAnual.toFixed(2)}
 
 
 📍 ENDEREÇO:
-🏠 ${empresa.endereco.logradouro}
+🏠 Logradouro: ${empresa.endereco.logradouro}
 📌 Bairro: ${empresa.endereco.bairro}
 🌆 Cidade: ${empresa.endereco.cidade}
 🏷️ CEP: ${empresa.endereco.cep}
