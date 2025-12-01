@@ -59,13 +59,13 @@ while (opcaoEscolhida !== '0') {
         console.log('=============================================');
         console.log(' ');
 
-        const novoNome = readline.question('Digite o novo nome da empresa: ');
+        const nomeFantasia = readline.question('Digite o novo nome fantasia da empresa: ');
         const razaoSocial = readline.question('Digite a nova razão social da empresa: ');
         const novoCnpj = readline.question('Digite o novo CNPJ da empresa: ');
         const novaInscricaoEstadual = readline.question('Digite a nova Inscrição Estadual da empresa: ');
         const dataFundacao = readline.question('Digite a nova Data de Fundação da empresa (DD/MM/AAAA): ');
 
-        empresa.nome = novoNome;
+        empresa.nomeFantasia = nomeFantasia;
         empresa.razaoSocial = razaoSocial;
         empresa.cnpj = novoCnpj;
         empresa.inscricaoEstadual = novaInscricaoEstadual;
@@ -115,12 +115,12 @@ while (opcaoEscolhida !== '0') {
 
         const novoEmail = readline.question('Digite o novo e-mail: ');
         const novoTelefone = readline.question('Digite o novo telefone: ');
-        const novoCelular = readline.question('Digite o novo celular: ');
+        const novoSite = readline.question('Digite o domínio do novo site: ');
 
         empresa.contato = {
           email: novoEmail,
           telefone: novoTelefone,
-          celular: novoCelular,
+          site: novoSite,
         };
 
         console.log('Dados de contato da empresa atualizados com sucesso!');

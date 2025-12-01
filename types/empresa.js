@@ -1,5 +1,4 @@
 export const empresa = {
-  nome: 'Umbrella Corporation',
   nomeFantasia: 'Umbrella Corp',
   razaoSocial: 'Umbrella Corporation Ltda',
   cnpj: '12.345.678/0001-90',
@@ -47,7 +46,7 @@ export const empresa = {
       nome: 'Alice Silva',
       cargo: 'Desenvolvedora Fullstack',
       salarioBruto: 8500,
-      dataAdmissao: '2022-01-10',
+      dataAdmissao: '01/10/2023',
       departamento: 'TI',
       inss: 935,
       irrf: 637.5,
@@ -59,7 +58,7 @@ export const empresa = {
       nome: 'Bruno Costa',
       cargo: 'Analista de Segurança',
       salarioBruto: 6500,
-      dataAdmissao: '2023-03-05',
+      dataAdmissao: '05/03/2023',
       departamento: 'Segurança',
       inss: 715,
       irrf: 487.5,

@@ -13,7 +13,7 @@ export function quadroAtualDeFuncionarios(funcionarios) {
    🆔 ID: ${funcionario.id}
    🧍 Nome: ${funcionario.nome}
    🧰 Cargo: ${funcionario.cargo}
-   💰 Salário: R$ ${funcionario.salario}
+   💰 Salário: R$ ${funcionario.salarioLiquido}
    📅 Data de Admissão: ${funcionario.dataAdmissao}
    🏢 Departamento: ${funcionario.departamento}
 \n`;
@@ -30,7 +30,7 @@ Total de Funcionários: ${funcionarios.length}
 🆔 ID: ${primeiroFuncionario.id}
 🧍 Nome: ${primeiroFuncionario.nome}
 🧰 Cargo: ${primeiroFuncionario.cargo}
-💰 Salário: R$ ${primeiroFuncionario.salario}
+💰 Salário: R$ ${primeiroFuncionario.salarioLiquido}
 📅 Data de Admissão: ${primeiroFuncionario.dataAdmissao}
 🏢 Departamento: ${primeiroFuncionario.departamento}
 
@@ -38,7 +38,7 @@ Total de Funcionários: ${funcionarios.length}
 🆔 ID: ${ultimoFuncionario.id}
 🧍 Nome: ${ultimoFuncionario.nome}
 🧰 Cargo: ${ultimoFuncionario.cargo}
-💰 Salário: R$ ${ultimoFuncionario.salario}
+💰 Salário: R$ ${ultimoFuncionario.salarioLiquido}
 📅 Data de Admissão: ${ultimoFuncionario.dataAdmissao}
 🏢 Departamento: ${ultimoFuncionario.departamento}
 
