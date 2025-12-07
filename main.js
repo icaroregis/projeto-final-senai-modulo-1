@@ -1,17 +1,20 @@
 import readline from 'readline-sync';
 import { empresa } from './types/empresa.js';
-import { exibirMenu } from './utils/exibirMenu.js';
-import { boasVindas } from './utils/boasVindas.js';
-import { calcularFgts } from './utils/calcularFgts.js';
-import { calcularInss } from './utils/calcularInss.js';
-import { sobreSoftware } from './utils/sobreSoftware.js';
-import { validarOpcoes } from './utils/validarOpcoes.js';
-import { calcularImpostoRenda } from './utils/impostoRenda.js';
-import { calcularSalarioLiquido } from './utils/salarioLiquido.js';
-import { calculadoraSalarioMinimo } from './utils/calculadoraSalario.js';
-import { quadroAtualDeFuncionarios } from './utils/quadroDeFuncionarios.js';
-import { mostrarInformacoesEmpresa } from './utils/mostrarInformacoesEmpresa.js';
-import { folhaPagamentoPorFuncionario } from './utils/folhaPagementoPorFuncionario.js';
+
+import {
+  exibirMenu,
+  boasVindas,
+  calcularFgts,
+  calcularInss,
+  sobreSoftware,
+  validarOpcoes,
+  calcularImpostoRenda,
+  calcularSalarioLiquido,
+  calculadoraSalarioMinimo,
+  quadroAtualDeFuncionarios,
+  mostrarInformacoesEmpresa,
+  folhaPagamentoPorFuncionario,
+} from './utils/exibirMenu.js';
 
 let opcaoEscolhida = '';
 let voltarAoMenu = '';
