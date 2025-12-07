@@ -14,7 +14,7 @@ import {
   quadroAtualDeFuncionarios,
   mostrarInformacoesEmpresa,
   folhaPagamentoPorFuncionario,
-} from './utils/exibirMenu.js';
+} from './utils';
 
 let opcaoEscolhida = '';
 let voltarAoMenu = '';
